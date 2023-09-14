@@ -1,0 +1,212 @@
+<!-- 6-10 страниц
+
+горизонтальное меню 
+ 
+       адаптивность ресурса. 
+      Проект разместить на Github Page, 
+      ссылку прикрепить в ответе. 
+    
+    -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безопасность Web-ресурсов</title>
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .cell table {
+            color: #000000;
+        }
+
+        .leftfoto {
+            float: left;
+            margin: 4px 10px 2px 2px;
+        }
+
+        #menu {
+            position: fixed;
+            width: 100%;
+
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 150px;
+            right: 25px;
+            width: 250px;
+            height: 10;
+            background-color: #ac5656;
+            color: #660a0a;  
+            /* overflow-y: scroll; */
+        }
+
+        a:hover {
+            background: #863535;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <div data-sticky-container>
+            <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="title-bar-left">
+                    <h1>Безопасность Web-ресурсов</h1>
+                    <div class="title-bar-right">
+                        <a href="#Что_такое_Web-ресурс?" style="color:#5e2323;">Что такое Web-ресурс?</a>
+                        <a href="#Как_работает_Web-сайт?" style="color:#5e2323;">Как работает Web-сайт?</a>
+                        <a href="#Обучающее_видео" style="color:#5e2323;">Обучающее видео</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="grid-x">
+        <div class="cell small-9">
+            <div class="grid-container">
+                <br><br><br><br><br>
+                <img width="400" height="400" src="web1.jpg" class="leftfoto" alt="">
+                <h4><a id="section1" style="position: relative; top:-150px;"></a>Что такое Web-ресурс?</h4>
+                <p><strong>Web-сайт</strong> – это интерактивная веб-страница или набор страниц, которые содержат
+                    информацию,
+                    изображения, видео и другие мультимедийные элементы, доступные через интернет. Он может быть
+                    создан для различных целей, таких как продажа товаров и услуг, информирование о компании и ее
+                    продуктах, общения с пользователями, обучения, развлечения и т.д.
+                </p>
+                <p>Сайт может иметь различный дизайн и функционал, включая интерактивность, анимацию, аудио и видео
+                    контент, формы обратной связи, панели управления, базы данных, онлайн-чаты и другие функции.
+                    Сайты могут быть статическими, содержащими фиксированный контент, или динамическими, с
+                    генерируемым контентом, который меняется в зависимости от действий пользователя.
+                </p>
+
+                <p>Для создания сайтов используются различные технологии, языки программирования и инструменты,
+                    такие как HTML, CSS, JavaScript, PHP, Python, Ruby, CMS (системы управления контентом),
+                    фреймворки и другие. Также важно учитывать аспекты безопасности, скорости загрузки страниц и
+                    оптимизации под поисковые системы.
+                </p>
+                <p>Сегодня сайт – это неотъемлемая часть современного бизнеса и представляет собой мощный
+                    инструмент для привлечения клиентов и продвижения бренда. Он может быть использован как для
+                    малого бизнеса, так и для крупных компаний, и становится все более доступным благодаря развитию
+                    технологий и услуг веб-разработки.
+                </p>
+                <h4><a id="section2" style="position: relative; top:-150px;"></a>Как работает Web-сайт?</h4>
+                <p>
+                    Сайт – это неотъемлемая часть современного Интернета, который представляет собой совокупность
+                    веб-страниц, связанных между собой гиперссылками и образующих единое пространство информации,
+                    доступное
+                    всем пользователям в мире. Но как именно работает сайт?
+                </p>
+                <p>
+                    Когда пользователь вводит веб-адрес сайта в адресную строку браузера, происходит следующий процесс:
+                </p>
+
+                <table style="border-color: #ac5656;" class="hover unstriped">
+                    <thead>
+                        <tr>
+                            <th style="background: #ac5656;"><br></th>
+                            <th style="background: #ac5656; text-align: center;">Работа Web-сайта</th>
+                        <tr>
+                            <th>Процесс</th>
+                            <th>Объяснение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DNS-запрос</td>
+                            <td>Браузер отправляет запрос на сервер доменных имен (DNS), который отвечает на вопрос,
+                                какой
+                                IP-адрес соответствует запрашиваемому доменному имени.</td>
+                        </tr>
+                        <tr>
+                            <td>Установление соединения</td>
+                            <td>Браузер устанавливает соединение с веб-сервером, на котором расположен сайт. Для этого
+                                он
+                                отправляет запрос на соединение, а сервер отвечает подтверждением (код 200), что
+                                соединение
+                                установлено.</td>
+                        </tr>
+                        <tr>
+                            <td>Запрос страницы</td>
+                            <td>Браузер отправляет запрос на сервер для получения нужной веб-страницы, и сервер
+                                отправляет
+                                ее обратно в виде HTML-документа.</td>
+                        </tr>
+                        <tr>
+                            <td>Загрузка страницы</td>
+                            <td>Браузер загружает полученный HTML-документ и начинает обрабатывать его содержимое.</td>
+                        </tr>
+                        <tr>
+                            <td>Разбор страницы</td>
+                            <td>Браузер разбирает HTML-документ на компоненты, такие как заголовки, абзацы, изображения,
+                                ссылки и т.д., и строит древовидную структуру документа (DOM).</td>
+                        </tr>
+                        <tr>
+                            <td>Загрузка ресурсов</td>
+                            <td>Браузер загружает все ресурсы, указанные в HTML-документе, такие как изображения,
+                                CSS-стили,
+                                скрипты, шрифты и т.д.</td>
+                        </tr>
+                        <tr>
+                            <td>Отображение страницы</td>
+                            <td>Браузер отображает полученную страницу, применяя к ней стили и скрипты, и позволяет
+                                пользователю взаимодействовать с контентом.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4><a id="section3" style="position: relative; top: -150px;"></a>Обучающее видео</h4>
+                <div class="responsive-embed widescreen" style="width: 70%; z-index: -9999;">
+                    <iframe src="https://www.youtube.com/embed/jBvkN8_c7t8?si=P9EHbBKcw6496MWL"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li><a href="#section1" style="color:#5e2323;">Что такое Web-ресурс?</a></li>
+                <li><a href="#section2" style="color:#5e2323;">Как работает Web-сайт?</a></li>
+                <li><a href="#section3" style="color:#5e2323;">Обучающее видео</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <ul class="pagination">
+            <li class="current"><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <p>&copy; 2023 "Безопасность Web-ресурсов". Мы в социальных сетях <a
+                            href="https://vk.com/katya_grad9"><img width="40" height="40" src="vk.png" alt=""></a></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+</body>
+
+</html>
