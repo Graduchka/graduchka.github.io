@@ -1,0 +1,147 @@
+<!-- 6-10 страниц -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безопасность Web-ресурсов</title>
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftfoto {
+            float: left;
+            margin: 4px 10px 2px 2px;
+        }
+
+        #menu {
+            position: fixed;
+            width: 100%;
+
+        }
+
+        a:hover {
+            background: #863535;
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #660a0a;
+            padding: 0px 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <div data-sticky-container>
+            <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="title-bar-left">
+                    <h1>Безопасность Web-ресурсов</h1>
+                    <div class="title-bar-right">
+                        <ul>
+                            <li><a href="index.html">Web-ресурс</a></li>
+                            <li><a href="index2.html">Безопасность сайта</a></li>
+                            <li><a href="index3.html">XSS</a></li>
+                            <li><a href="index4.html">SQL injection</a></li>
+                            <li><a href="index5.html">CSRF</a></li>
+                            <li><a href="index6.html">Прочие угрозы</a></li>
+                            <li><a href="index7.html">Как обезопасить сайт</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="grid-x">
+        <div class="cell small-11">
+            <div class="grid-container">
+                <br><br><br><br><br>
+                <h4 style="text-align: center;">Подделка межсайтовых запросов (CSRF)</h4>
+                <img width="600" height="400" src="web4.jpg" class="leftfoto" alt="">
+                <p>
+                    CSRF-атаки позволяют злоумышленнику выполнять действия, используя учётные данные другого
+                    пользователя,
+                    без его ведома или согласия.
+                </p>
+                <p>
+                    Этот тип атаки лучше всего пояснить на примере. Джон - злоумышленник, который знает, что
+                    определённый сайт позволяет пользователям, вошедшим в систему, отправлять деньги на указанную
+                    учётную запись, используя HTTP-запрос POST, который включает имя учётной записи и сумму денег. Джон
+                    создаёт форму, которая включает в себя его банковские реквизиты и сумму денег в виде скрытых полей,
+                    и отправляет её по электронной почте другим пользователям сайта (с кнопкой «Отправить»,
+                    замаскированной под ссылку на сайт «быстрого обогащения»).
+                </p>
+                <p>
+                    Если пользователь нажимает кнопку отправки, на сервер будет отправлен HTTP-запрос
+                    POST, содержащий сведения о транзакции и любые файлы cookie на стороне клиента,
+                    которые браузер связал с сайтом (добавление связанных файлов cookie сайта в запросы является
+                    нормальным поведением браузера). Сервер проверит файлы cookie и использует их, чтобы определить,
+                    вошёл ли пользователь в систему и имеет ли разрешение на совершение транзакции.
+                </p>
+                <p>
+                    В результате любой пользователь, который нажимает кнопку Отправить во время входа на торговый сайт,
+                    совершает транзакцию. Джон становится богатым.
+                </p>
+                <p>
+                    Один из способов предотвратить этот тип атаки - запросить сервером запросы POST, содержащие секрет,
+                    созданный пользователем для конкретного сайта. Секрет будет предоставлен сервером при отправке
+                    веб-формы, используемой для переводов. Такой подход не позволяет Джону создать свою собственную
+                    форму, потому что он должен знать секрет, который сервер предоставляет пользователю. Даже если он
+                    узнает секрет и создаст форму для конкретного пользователя, он больше не сможет использовать ту же
+                    форму для атаки на каждого пользователя. Веб-фреймворки часто включают такие механизмы
+                    предотвращения CSRF.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <ul class="pagination">
+            <li><a href="index.html">1</a></li>
+            <li><a href="index2.html">2</a></li>
+            <li><a href="index3.html">3</a></li>
+            <li><a href="index4.html">4</a></li>
+            <li class="current"><span>5</span></li>
+            <li><a href="index6.html">6</a></li>
+            <li><a href="index7.html">7</a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <p>&copy; 2023 "Безопасность Web-ресурсов". Мы в социальных сетях <a
+                            href="https://vk.com/katya_grad9"><img width="40" height="40" src="vk.png" alt=""></a></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+</body>
+
+</html>

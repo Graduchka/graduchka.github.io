@@ -1,0 +1,182 @@
+<!-- 6-10 страниц -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безопасность Web-ресурсов</title>
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftfoto {
+            float: left;
+            margin: 4px 10px 2px 2px;
+        }
+
+        #menu {
+            position: fixed;
+            width: 100%;
+
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 150px;
+            right: 25px;
+            width: 300px;
+            height: 85px;
+            background-color: #ac5656;
+            color: #660a0a;
+            /* overflow-y: scroll; */
+        }
+
+        a:hover {
+            background: #863535;
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #660a0a;
+            padding: 0px 16px;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:1300px) {
+            #sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <div data-sticky-container>
+            <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="title-bar-left">
+                    <h1>Безопасность Web-ресурсов</h1>
+                    <div class="title-bar-right">
+                        <ul>
+                            <li><a href="index.html">Web-ресурс</a></li>
+                            <li><a href="index2.html">Безопасность сайта</a></li>
+                            <li><a href="index3.html">XSS</a></li>
+                            <li><a href="index4.html">SQL injection</a></li>
+                            <li><a href="index5.html">CSRF</a></li>
+                            <li><a href="index6.html">Прочие угрозы</a></li>
+                            <li><a href="index7.html">Как обезопасить сайт</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="grid-x">
+        <div class="cell small-9">
+            <div class="grid-container">
+                <br><br><br><br><br>
+                <h4 style="text-align: center;"><a id="section1" style="position: relative; top:-150px;"></a>Межсайтовый скриптинг (XSS)</h4>
+                <img width="600" height="400" src="web3.jpg" class="leftfoto" alt="">
+                <p>
+                    XSS (<em>Cross-Site Scripting</em> - Межсайтовый скриптинг) это термин, используемый для описания
+                    типа атак, которые позволяют злоумышленнику внедрять вредоносный код через веб-сайт в браузеры других
+                    пользователей. Поскольку внедрённый код поступает в браузер с сайта, он является доверенным и может
+                    выполнять такие действия, как отправка авторизационного файла cookieпользователя злоумышленнику.
+                    Когда у злоумышленника есть файл cookie, он может войти на сайт, как если бы он был пользователем, и сделать
+                    все, что может пользователь, например, получить доступ к данным кредитной карты, просмотреть
+                    контактные данные или изменить пароли.
+                </p>
+                <p>
+                    Уязвимости XSS делятся на <em>отражённые</em> и <em>хранимые</em>, в зависимости от того, как сайт
+                    возвращает внедрённый код в браузер.
+                </p>
+                <a id="section2" style="position: relative; top:-150px;"></a>
+                <p>
+                    <em>Отражённая XSS-уязвимость</em> возникает, когда пользовательский контент, который передаётся на
+                    сервер, немедленно и без изменений возвращается для отображения в браузере. Любой скрипт в исходном
+                    пользовательском контенте запустится при загрузке новой страницы. Например, рассмотрим строку поиска
+                    по сайту, в которой поисковые слова закодированы как параметры URL, и эти слова отображаются вместе
+                    с результатами. Злоумышленник может создать поисковую ссылку, которая будет содержать вредоносный
+                    скрипт в качестве параметра и переслать его другому пользователю по электронной почте. Если целевой
+                    пользователь
+                    кликнет по этой «интересной ссылке», то скрипт выполнится при отображении результатов поиска.
+                    Как мы уже говорили, злоумышленник таким образом получает всю информацию, необходимую ему для
+                    входа на сайт в качестве целевого пользователя, потенциального совершения покупок от имени
+                    пользователя или получения его контактной информации.
+                </p>
+                <a id="section3" style="position: relative; top:-150px;"></a>
+                <p>
+                    <em>Хранимая (постоянная) уязвимость XSS</em> возникает, когда вредоносный скрипт хранится на веб-сайте, а
+                    затем снова
+                    отображается без изменений, чтобы другие пользователи могли выполнять его невольно. Например, доска
+                    обсуждений, которая принимает комментарии, содержащие неизмененный HTML, может хранить вредоносный
+                    скрипт от злоумышленника. Когда комментарии отображаются, скрипт выполняется и может отправить
+                    злоумышленнику информацию, необходимую для доступа к учётной записи пользователя. Атака такого рода
+                    чрезвычайно популярна и мощна, потому что злоумышленник может даже не иметь прямого отношения к
+                    жертвам. Хотя данные из запросов POST или GET являются наиболее распространённым источником
+                    уязвимостей XSS, любые данные из браузера потенциально уязвимы, такие как данные cookie,
+                    отображаемые браузером, или пользовательские файлы, которые загружаются и отображаются. Наилучшей
+                    защитой от уязвимостей XSS является удаление или отключение любой разметки, которая потенциально
+                    может содержать инструкции по запуску кода. Процесс изменения пользовательских данных, чтобы их
+                    нельзя было использовать для запуска сценариев или иным образом влиять на выполнение серверного
+                    кода, называется очисткой ввода. Многие веб-фреймворки автоматически очищают пользовательский ввод
+                    от HTML-форм по умолчанию.
+                </p>
+            </div>
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li><a href="#section1" style="color:#5e2323;">Межсайтовый скриптинг (XSS)</a></li>
+                <li><a href="#section2" style="color:#5e2323;">Отражённая XSS-уязвимость</a></li>
+                <li><a href="#section3" style="color:#5e2323;">Хранимая уязвимость XSS</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <ul class="pagination">
+            <li><a href="index.html">1</a></li>
+            <li><a href="index2.html">2</a></li>
+            <li class="current"><span>3</span></li>
+            <li><a href="index4.html">4</a></li>
+            <li><a href="index5.html">5</a></li>
+            <li><a href="index6.html">6</a></li>
+            <li><a href="index7.html">7</a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <p>&copy; 2023 "Безопасность Web-ресурсов". Мы в социальных сетях <a
+                            href="https://vk.com/katya_grad9"><img width="40" height="40" src="vk.png" alt=""></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+</body>
+
+</html>

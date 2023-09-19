@@ -1,0 +1,167 @@
+<!-- 6-10 страниц -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безопасность Web-ресурсов</title>
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftfoto {
+            float: left;
+            margin: 4px 10px 2px 2px;
+        }
+
+        #menu {
+            position: fixed;
+            width: 100%;
+
+        }
+
+        a:hover {
+            background: #863535;
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #660a0a;
+            padding: 0px 16px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <div data-sticky-container>
+            <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="title-bar-left">
+                    <h1>Безопасность Web-ресурсов</h1>
+                    <div class="title-bar-right">
+                        <ul>
+                            <li><a href="index.html">Web-ресурс</a></li>
+                            <li><a href="index2.html">Безопасность сайта</a></li>
+                            <li><a href="index3.html">XSS</a></li>
+                            <li><a href="index4.html">SQL injection</a></li>
+                            <li><a href="index5.html">CSRF</a></li>
+                            <li><a href="index6.html">Прочие угрозы</a></li>
+                            <li><a href="index7.html">Как обезопасить сайт</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="grid-x">
+        <div class="cell small-11">
+            <div class="grid-container">
+                <br><br><br><br><br>
+                <h4 style="text-align: center;">Прочие угрозы</h4>
+                <p>
+                    Другие распространённые атаки / уязвимости включают:
+                </p>
+                <div>
+                    <p>
+                        <a href="https://www.owasp.org/index.php/Clickjacking" class="external"
+                            target="_blank">Clickjacking</a>
+                        В этой атаке злоумышленник перехватывает клики, предназначенные для видимого сайта верхнего
+                        уровня, и направляет их на скрытую ниже страницу.
+                        Этот метод можно использовать, например, для отображения законного сайта банка, но захвата
+                        учётных данных для входа в невидимый iframe, контролируемый злоумышленником.
+                        Clickjacking также можно
+                        использовать для того, чтобы заставить пользователя нажать кнопку на видимом сайте, но при этом
+                        на самом деле невольно нажимать совершенно другую кнопку. В качестве защиты ваш сайт может
+                        предотвратить встраивание себя в iframe на другом сайте, установив соответствующие заголовки
+                        HTTP.
+                    </p>
+                    <p>
+
+                        <a href="/en-US/docs/Glossary/Distributed_Denial_of_Service" class="only-in-en-us"
+                            target="_blank">
+                            Denial of Service (DoS)</a> DoS обычно достигается за счёт наводнения
+                        целевого сайта поддельными запросами, так что доступ к сайту нарушается для законных
+                        пользователей. Запросы могут быть просто многочисленными или по отдельности потреблять
+                        большие объёмы ресурсов (например, медленное чтение или загрузка больших файлов). Защита от DoS
+                        обычно работает, выявляя и блокируя «плохой» трафик, пропуская при этом легитимные сообщения.
+                        Эти
+                        средства защиты обычно расположены перед веб-сервером или на нем (они не являются частью
+                        самого веб-приложения).
+                    </p>
+                    <p>
+                        <a href="https://en.wikipedia.org/wiki/Directory_traversal_attack" class="external"
+                            target="_blank">Directory Traversal</a> В этой атаке злоумышленник
+                        пытается получить доступ к частям файловой системы веб-сервера, к которым у него не должно быть
+                        доступа. Эта уязвимость возникает, когда пользователь может передавать имена файлов, содержащие
+                        символы навигации файловой системы (например, <code>../../</code>). Решение состоит в том, чтобы
+                        очищать ввод перед его использованием.
+                    </p>
+                    <p>
+                        <a href="https://en.wikipedia.org/wiki/File_inclusion_vulnerability" class="external"
+                            target="_blank">File Inclusion</a> В этой атаке пользователь может "случайно" указать файл
+                        для отображения или выполнения в данных, передаваемых на сервер. После загрузки этот файл может
+                        выполняться на веб-сервере или на стороне клиента (что приводит к XSS-атаке). Решение состоит в
+                        том, чтобы дезинфицировать ввод перед его использованием.
+                    </p>
+                    <p>
+                        <a href="https://www.owasp.org/index.php/Command_Injection" class="external"
+                            target="_blank">Внедрение команд</a> Атаки с внедрением команд позволяют злоумышленнику
+                        выполнять произвольные системные команды в операционной системе хоста. Решение состоит в том,
+                        чтобы дезинфицировать вводимые пользователем данные до того, как их можно будет использовать в
+                        системных вызовах.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <ul class="pagination">
+            <li><a href="index.html">1</a></li>
+            <li><a href="index2.html">2</a></li>
+            <li><a href="index3.html">3</a></li>
+            <li><a href="index4.html">4</a></li>
+            <li><a href="index5.html">5</a></li>
+            <li class="current"><span>6</span></li>
+            <li><a href="index7.html">7</a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <p>&copy; 2023 "Безопасность Web-ресурсов". Мы в социальных сетях <a
+                            href="https://vk.com/katya_grad9"><img width="40" height="40" src="vk.png" alt=""></a></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!-- 6-10 страниц -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безопасность Web-ресурсов</title>
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgb(44, 38, 38);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftfoto {
+            float: left;
+            margin: 4px 10px 2px 2px;
+        }
+
+        #menu {
+            position: fixed;
+            width: 100%;
+
+        }
+
+        a:hover {
+            background: #863535;
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #660a0a;
+            padding: 0px 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <div data-sticky-container>
+            <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="title-bar-left">
+                    <h1>Безопасность Web-ресурсов</h1>
+                    <div class="title-bar-right">
+                        <ul>
+                            <li><a href="index.html">Web-ресурс</a></li>
+                            <li><a href="index2.html">Безопасность сайта</a></li>
+                            <li><a href="index3.html">XSS</a></li>
+                            <li><a href="index4.html">SQL injection</a></li>
+                            <li><a href="index5.html">CSRF</a></li>
+                            <li><a href="index6.html">Прочие угрозы</a></li>
+                            <li><a href="index7.html">Как обезопасить сайт</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="grid-x">
+        <div class="cell small-11">
+            <div class="grid-container">
+                <br><br><br><br><br>
+                <h4 style="text-align: center;"><a id="section1" style="position: relative; top:-150px;"></a>Что такое
+                    безопасность сайта?</h4>
+                <p>Интернет - опасное место! Мы регулярно слышим о том, что веб-сайты становятся недоступными из-за атак
+                    типа отказано в обслуживании, или отображение изменённой (и часто повреждённой) информации на их
+                    страницах. В других случаях миллионы паролей, адресов электронной почты и данные кредитных карт
+                    становились общедоступными, подвергая пользователей веб-сайта личному смущению или к финансовым
+                    рискам.
+                </p>
+                <p>Цель веб-безопасности заключается в предотвращении этих (или других) видов атак. Более формальным
+                    определением веб-безопасности является: способы защиты веб-сайтов от несанкционированного доступа,
+                    использования, изменения, уничтожения или нарушения работы.
+                </p>
+                <img width="400" height="400" src="web2.jpg" class="leftfoto" alt="">
+                <p>Для эффективной безопасности веб-сайта необходимо уделять особое внимание к разработке всего
+                    веб-сайта: к вашему веб-приложению, конфигурации веб-сервера, при написании политик создания и
+                    обновления паролей, а так же кода на стороне клиента. Хотя все это звучит очень зловеще, хорошая
+                    новость заключается в том, что если вы используете веб-фреймворк для серверной части, то он почти
+                    наверняка обеспечит «по умолчанию» надёжные и продуманные механизмы защиты от ряда наиболее
+                    распространённых атак. Другие атаки можно смягчить с помощью конфигурации вашего веб-сервера,
+                    например, включив HTTPS. Наконец, есть общедоступные инструменты для сканирования уязвимостей,
+                    которые могут помочь вам определить, если вы допустили какие-либо очевидные ошибки.
+                </p>
+            </div>
+        </div>
+        <!-- <div id="sidebar">
+            <ul>
+                <li><a href="#section1" style="color:#5e2323;">Что такое безопасность сайта?</a></li>
+                <li><a href="#section2" style="color:#5e2323;">Угрозы безопасности сайта
+                </a></li>
+                
+            </ul>
+        </div> -->
+    </div>
+
+    <div class="grid-container">
+        <ul class="pagination">
+            <li><a href="index.html">1</a></li>
+            <li class="current"><span>2</span></li>
+            <li><a href="index3.html">3</a></li>
+            <li><a href="index4.html">4</a></li>
+            <li><a href="index5.html">5</a></li>
+            <li><a href="index6.html">6</a></li>
+            <li><a href="index7.html">7</a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <p>&copy; 2023 "Безопасность Web-ресурсов". Мы в социальных сетях <a
+                            href="https://vk.com/katya_grad9"><img width="40" height="40" src="vk.png" alt=""></a></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+</body>
+
+</html>

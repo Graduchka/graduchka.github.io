@@ -1,12 +1,4 @@
-<!-- 6-10 страниц
-
-горизонтальное меню 
- 
-       адаптивность ресурса. 
-      Проект разместить на Github Page, 
-      ссылку прикрепить в ответе. 
-    
-    -->
+<!-- 6-10 страниц -->
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -47,15 +39,37 @@
             position: fixed;
             top: 150px;
             right: 25px;
-            width: 250px;
-            height: 10;
+            width: 300px;
+            height: 85px;
             background-color: #ac5656;
-            color: #660a0a;  
+            color: #660a0a;
             /* overflow-y: scroll; */
         }
 
         a:hover {
             background: #863535;
+        }
+
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #660a0a;
+            padding: 0px 16px;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:1300px) {
+            #sidebar {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -67,9 +81,15 @@
                 <div class="title-bar-left">
                     <h1>Безопасность Web-ресурсов</h1>
                     <div class="title-bar-right">
-                        <a href="#Что_такое_Web-ресурс?" style="color:#5e2323;">Что такое Web-ресурс?</a>
-                        <a href="#Как_работает_Web-сайт?" style="color:#5e2323;">Как работает Web-сайт?</a>
-                        <a href="#Обучающее_видео" style="color:#5e2323;">Обучающее видео</a>
+                        <ul>
+                            <li><a href="index.html">Web-ресурс</a></li>
+                            <li><a href="index2.html">Безопасность сайта</a></li>
+                            <li><a href="index3.html">XSS</a></li>
+                            <li><a href="index4.html">SQL injection</a></li>
+                            <li><a href="index5.html">CSRF</a></li>
+                            <li><a href="index6.html">Прочие угрозы</a></li>
+                            <li><a href="index7.html">Как обезопасить сайт</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -81,7 +101,7 @@
             <div class="grid-container">
                 <br><br><br><br><br>
                 <img width="400" height="400" src="web1.jpg" class="leftfoto" alt="">
-                <h4><a id="section1" style="position: relative; top:-150px;"></a>Что такое Web-ресурс?</h4>
+                <h4 style="text-align: center;"><a id="section1" style="position: relative; top:-150px;"></a>Что такое Web-ресурс?</h4>
                 <p><strong>Web-сайт</strong> – это интерактивная веб-страница или набор страниц, которые содержат
                     информацию,
                     изображения, видео и другие мультимедийные элементы, доступные через интернет. Он может быть
@@ -104,7 +124,7 @@
                     малого бизнеса, так и для крупных компаний, и становится все более доступным благодаря развитию
                     технологий и услуг веб-разработки.
                 </p>
-                <h4><a id="section2" style="position: relative; top:-150px;"></a>Как работает Web-сайт?</h4>
+                <h4 style="text-align: center;"><a id="section2" style="position: relative; top:-150px;"></a>Как работает Web-сайт?</h4>
                 <p>
                     Сайт – это неотъемлемая часть современного Интернета, который представляет собой совокупность
                     веб-страниц, связанных между собой гиперссылками и образующих единое пространство информации,
@@ -168,7 +188,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <h4><a id="section3" style="position: relative; top: -150px;"></a>Обучающее видео</h4>
+                <h4 style="text-align: center;"><a id="section3" style="position: relative; top: -150px;"></a>Обучающее видео</h4>
                 <div class="responsive-embed widescreen" style="width: 70%; z-index: -9999;">
                     <iframe src="https://www.youtube.com/embed/jBvkN8_c7t8?si=P9EHbBKcw6496MWL"
                         title="YouTube video player"
@@ -189,9 +209,12 @@
     <div class="grid-container">
         <ul class="pagination">
             <li class="current"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+            <li><a href="index2.html">2</a></li>
+            <li><a href="index3.html">3</a></li>
+            <li><a href="index4.html">4</a></li>
+            <li><a href="index5.html">5</a></li>
+            <li><a href="index6.html">6</a></li>
+            <li><a href="index7.html">7</a></li>
         </ul>
     </div>
     <footer>
